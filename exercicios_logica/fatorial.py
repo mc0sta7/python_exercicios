@@ -1,6 +1,6 @@
 numero = int(input('Nº: '))
 
-numeros = [5,4,3,2,1]
+numeros = []
 fatorial = 0
 
 for contagem in range(numero,0,-1):
