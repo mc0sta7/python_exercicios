@@ -1,25 +1,21 @@
-"""
-import math
-numero = int(input('Nº: '))
+def fatorial(numero):
 
-numeros = []
-fatorial = 0
+    numeros = []
+    numero_fatorial = 0
 
-for contagem in range(numero,0,-1):
-    numeros.append(contagem)
+    for contagem in range(numero,0,-1):
+        numeros.append(contagem)
 
-for contador in numeros:
-    if fatorial <= contador:
-        fatorial = contador
-    elif fatorial >= contador:
-        fatorial = fatorial * contador
+    for contador in numeros:
+        if numero_fatorial <= contador:
+            numero_fatorial = contador
+        elif numero_fatorial >= contador:
+            numero_fatorial = numero_fatorial * contador
+    return numero_fatorial
 
-print(fatorial)
-"""
-num = int(input("Digite um número inteiro: "))
-fatorial = 1
-
-for i in range(1, num + 1):
-    fatorial = fatorial * i
-
-print(f"O fatorial de {num} é {fatorial}")
+while True:
+    try:
+        numero_qualquer = int(input('Nº: '))
+        print(fatorial(numero_qualquer))
+    except ValueError:
+        print('Digite apenas números!')
