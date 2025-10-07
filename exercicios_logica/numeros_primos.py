@@ -2,7 +2,7 @@ def numeros_primos_entre_1_e_40():
 
     numeros_primos = []
 
-    for n in range(2,101):
+    for n in range(2,41):
 
         if n in (2, 3, 5, 7):
              print(n , 'é primo')
