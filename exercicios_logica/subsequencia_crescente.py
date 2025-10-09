@@ -61,9 +61,11 @@ def maior_subsequencia_crescente(lista):
     
     for i in range(len(lista)):
         atual = [lista[i]]
+
         for j in range(i + 1, len(lista)):
             if lista[j] > atual[-1]:
                 atual.append(lista[j])
+                
         subsequencias.append(atual)
     
     # encontra a maior
