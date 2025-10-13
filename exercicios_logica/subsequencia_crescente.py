@@ -20,7 +20,7 @@ def subsequencia(lista_numeros):
         sequencia1 = []
         numeral_1 = 0
 
-        for n in numeros_1:
+        for n in lista_numeros:
             if numeral_1 < n:
                 numeral_1 = n
                 sequencia1.append(numeral_1)
