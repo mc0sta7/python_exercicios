@@ -1,4 +1,4 @@
-p = 'roma'
+p = 'amore'
 
 palavra = p.lower()
 
