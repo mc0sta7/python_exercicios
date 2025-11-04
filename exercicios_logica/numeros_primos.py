@@ -20,15 +20,20 @@ def numero_primo(numero):
          return 'Não é primo'
      
      if numero >= 2:
-        for i in range(2, int(numero **0.5) + 1):
+        for i in range(2, int(numero ** 0.5) + 1):
+
             if numero % i == 0:
+
                 return 'Não é primo'
+            
         return 'É primo'
 
 while True:
      try:
+         
          numero = int(input('Nº: '))
          print(numero_primo(numero))
+
      except ValueError:
          print('Digite apenas números!')
 

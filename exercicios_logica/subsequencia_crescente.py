@@ -1,4 +1,3 @@
-
 # Código não funcional
 
 numeros = '5 1 8 2 3 9 4'
