@@ -1,3 +1,5 @@
+from collections import Counter
+
 p = 'amore'
 
 palavra = p.lower()
@@ -9,8 +11,6 @@ letra = []
 for verificador_de_letra in palavra:
     if verificador_de_letra in alfabeto:
         letra.append(verificador_de_letra)
-
-from collections import Counter
 
 letras_e_quantidades = dict(Counter(letra))
 quantidades_de_letras = letras_e_quantidades.values()
