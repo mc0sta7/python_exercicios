@@ -1,21 +1,28 @@
 # Caixa eletrônico
 
+dinheiro_para_sacar = int(input('Valor do saque: '))
 cedulas = [100, 50, 20, 10, 5, 2, 1]
 
-valor_da_conta = int(5.000)
-dinheiro_para_sacar = int(170)
-maior_cedula = 0
-maiores_cedulas = dict()
-dinheiro = int()
+while dinheiro_para_sacar != 0:
 
-for i in cedulas:
+    maior_cedula = 0
 
-    if i > maior_cedula:
-        maior_cedula = i
+    for i in cedulas:
 
-quantidade_de_cedulas_float = dinheiro_para_sacar / maior_cedula
-quantidade_de_cedulas_inteiro = int(quantidade_de_cedulas_float)
+        if i > maior_cedula:
+            maior_cedula = i
 
-subtracao = dinheiro_para_sacar - maior_cedula
+    quantidade_de_cedulas = dinheiro_para_sacar // maior_cedula
 
-print(subtracao)
+    cedulas_lista = []
+    quantidade_de_cedulas_lista = []
+
+    cedulas_lista.append(maior_cedula)
+    quantidade_de_cedulas_lista.append(quantidade_de_cedulas)
+
+    cedulas_e_quantidades = dict(zip(cedulas_lista, quantidade_de_cedulas_lista))
+    print(cedulas_e_quantidades)
+
+    cedulas.remove(maior_cedula)
+
+    dinheiro_para_sacar -= (maior_cedula * quantidade_de_cedulas)
