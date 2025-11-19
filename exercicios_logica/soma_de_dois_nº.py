@@ -15,7 +15,6 @@ for i in numeros:
     for num in numeros:
 
         possibbilidade = i + num
-
         if possibbilidade == target:
             subsequencias.append(f'{i} + {num}')
 
@@ -28,7 +27,7 @@ target1 = 9
 nums_vistos = {} # {valor: indice}
 pares_otimizados = []
 
-# Iteramos apenas uma vez (enumerate fornece o índice 'i' e o valor 'num')
+# Iteramos apenas uma vez (enumerate fornece o índice 'i' e o valor 'num')  
 for i, num in enumerate(numeros1):
     complemento = target1 - num
     
