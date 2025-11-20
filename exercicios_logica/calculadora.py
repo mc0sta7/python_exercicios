@@ -1,4 +1,52 @@
-def adicao(x, y):  #adição
+# Calculadora
+
+condicao_do_fim_do_loop = 'N'
+condicao = str()
+
+while condicao != condicao_do_fim_do_loop:
+    
+    operacoes = ['+', '-','x', 'X', '÷']
+
+    while True:
+        try:
+
+            num1 = float(input('Nº: '))
+
+            while True:
+
+                operacao = str(input(f'Escolha sua operação{operacoes}: '))
+
+                if operacao not in operacoes:
+                    print(f'Digite apenas as operações permitidas')
+                    continue
+                else:
+                    break
+                
+            num2 = float(input('Nº: '))            
+            break
+
+        except ValueError:
+            print('Digite apenas números')
+    
+    if operacao == '+':
+        print(f'{num1} {operacao} {num2} = {num1 + num2}')
+
+    elif operacao == '-':
+        print(f'{num1} {operacao} {num2} = {num1 - num2}')
+
+    elif operacao == 'x' or operacao == 'X':
+        print(f'{num1} x {num2} = {num1 * num2}')
+
+    elif operacao == '÷':
+
+        if num2 == 0:
+            print('Não há divisão por 0')
+        else:
+            print(f'{num1} {operacao} {num2} = {num1 / num2}')
+
+    condicao = str(input('Deseja continuar? [S/N]: ')).strip().upper()
+
+'''def adicao(x, y):  #adição
   return x + y
 
 
@@ -49,4 +97,4 @@ while True:  #estrutura de repetição
 
     print('Novamente!')
   except ValueError:
-    print("Digite apenas números!")
+    print("Digite apenas números!")'''
