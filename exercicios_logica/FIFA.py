@@ -2,10 +2,13 @@ import random
 
 '''FIFA'''
 
+# Formação de pares com jogadores e times
+
+# Parte 1
 condicao_de_parada = 'pare'
 repeticao = str()
 
-while repeticao != 'N':
+while True:
 
     jogadores = []
     times = []
@@ -17,20 +20,26 @@ while repeticao != 'N':
 
     while jogador_aleatorio != condicao_de_parada:
 
-            jogador_aleatorio = str(input('Nome do jogador: ')).lower()
+            jogador_aleatorio = str(input(f'Nome do {len(jogadores) + 1}º jogador: ')).strip().lower()
             if jogador_aleatorio == condicao_de_parada:
                    break
             jogadores.append(jogador_aleatorio)
+    print(f'---Teremos {len(jogadores)} jogadores---')
 
+    print(f'Recomendamos a escolha de {len(jogadores)} times')    
     print('  ---Times---  ' \
     '   Para encerrar o Digite: PARE   ')
 
     while time_aleatorio != condicao_de_parada:
 
-            time_aleatorio = str(input('Nome do time: ')).lower()
+            time_aleatorio = str(input(f'Nome do {len(times) + 1}º time: ')).strip().lower()
             if time_aleatorio == condicao_de_parada:
                    break
             times.append(time_aleatorio)
+    print(f'Teremos {len(jogadores)} jogadores')
+
+    if not jogadores or not times:
+        print('É necessário pelo menos 1 jogador e 1 time')
 
     random.shuffle(jogadores)
     random.shuffle(times)
@@ -39,21 +48,37 @@ while repeticao != 'N':
     print('  ---Resposta---  ')
     print(dict(final))
 
-    repeticao = str(input('Deseja repetir? S/N: ')).upper()
+    if len(jogadores) != len(times):
+          print('A quantidade de times e de jogadores não é a mesma.')
 
-"""times_adicionados = []
+    print('CASO ESPECIAL. Sobrou time ou jogador?')
+    excecao = str(input('Deseja sortear times extras? Digite [S/N]: ')).strip().lower()
+    
+    if excecao == 'S':
 
-for i in range(2):
+        # Parte 2 é uma exceção 
+                print('  ---Times Extras---  ' \
+                '   Condição de parada: Digite: PARE   ')
 
-   adcionar_times = str(input('Time a mais: '))
-   times_adicionados.append(adcionar_times)
+                times_acrescentados = []
+                times_diferentes = str()
 
-jogadores_a_mais = []
+                while times_diferentes != condicao_de_parada:
+               
+                        times_diferentes = str(input('Times acrescentados: ')).strip().lower()
+                        if times_diferentes == condicao_de_parada:
+                         break
+                        times_acrescentados.append(times_diferentes)
 
-for i in range(2):
-        jogadores_com_2_times = random.choice(jogadores)
-        jogadores_a_mais.append(jogadores_com_2_times)
+                random.shuffle(times_acrescentados)
+                random.shuffle(jogadores)
 
-final = dict(zip(jogadores_a_mais, times_adicionados))
+                final = dict(zip(times_acrescentados, jogadores))
+                print(final)
+                print('Tenha um bom jogo! :)')
 
-print(final)"""
+    sorteio_do_zero = str(input('Você deseja realizar um novo sorteio? Tudo do ZERO? ')).strip().lower()
+
+    if sorteio_do_zero == 'N':
+           print('Programa encerrado! Tenha um bom jogo :)')
+           break
